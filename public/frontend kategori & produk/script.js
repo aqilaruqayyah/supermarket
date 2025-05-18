@@ -1,4 +1,4 @@
-const baseUrl = 'http://localhost:'; 
+const baseUrl = 'http://localhost:8000/api'; 
 
 // ----------------- KATEGORI -------------------
 function tampilkanKategori() {
