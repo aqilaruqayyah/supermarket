@@ -25,6 +25,7 @@ class ProdukController extends Controller
         $request->validate([
             'nama' => 'required',
             'harga' => 'required|numeric',
+            'stok' => 'required|numeric',
             'kategori_id' => 'required|exists:kategoris,id'
         ]);
 
@@ -52,6 +53,7 @@ class ProdukController extends Controller
         $request->validate([
             'nama' => 'required',
             'harga' => 'required|numeric',
+            'stok' => 'required|numeric',
             'kategori_id' => 'required|exists:kategoris,id'
         ]);
 
