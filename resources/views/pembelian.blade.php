@@ -2,6 +2,7 @@
     <p style="color: green;">{{ session('success') }}</p>
 @endif
 
+<h2>Form Pembelian</h2>
 <form action="{{ route('pembelian.store') }}" method="POST">
     @csrf
 
@@ -34,3 +35,35 @@
 
     <button type="submit">Simpan Pembelian</button>
 </form>
+
+<hr>
+
+<h2>Daftar Pembelian</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Pembeli</th>
+            <th>Produk</th>
+            <th>Penjual</th>
+            <th>Jumlah</th>
+            <th>Total Harga</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse($pembelians as $pembelian)
+            <tr>
+                <td>{{ $pembelian->id }}</td>
+                <td>{{ $pembelian->pembeli->nama ?? '-' }}</td>
+                <td>{{ $pembelian->produk->nama ?? '-' }}</td>
+                <td>{{ $pembelian->penjual->nama ?? '-' }}</td>
+                <td>{{ $pembelian->jumlah }}</td>
+                <td>Rp{{ number_format($pembelian->total_harga) }}</td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="6" style="text-align:center;">Belum ada data pembelian</td>
+            </tr>
+        @endforelse
+    </tbody>
+</table>
