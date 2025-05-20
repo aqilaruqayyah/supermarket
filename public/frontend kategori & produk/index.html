@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kategori & Produk</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Daftar Kategori</h2>
+  <ul id="listKategori"></ul>
 
+  <h3>Form Kategori</h3>
+  <input type="text" id="kategoriId" placeholder="ID"  />
+  <input type="text" id="kategoriNama" placeholder="Nama Kategori" />
+  <button onclick="simpanKategori()">Simpan Kategori</button>
+
+  <hr>
+
+  <h2>Daftar Produk</h2>
+  <ul id="listProduk"></ul>
+
+  <h3>Form Produk</h3>
+  <input type="text" id="produkId" placeholder="ID"  />
+  <input type="text" id="produkNama" placeholder="Nama Produk" />
+  <input type="number" id="produkHarga" placeholder="Harga" />
+  <input type="number" id="produkStok" placeholder="Stok" />
+  <select id="produkKategori">
+    <option value="">-- Pilih Kategori --</option>
+  </select>
+  <button onclick="simpanProduk()">Simpan Produk</button>
+
+  <h3>Pilih Produk</h3>
+  <select id="produkSelector" onchange="pilihProdukIni()">
+    <option value="">-- Pilih Produk --</option>
+  </select>
+
+  <script src="script.js"></script>
+</body>
+</html>
