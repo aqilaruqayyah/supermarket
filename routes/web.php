@@ -11,6 +11,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/pembelian', function () {
+    $pembelis = \App\Models\Pembeli::all();
+    $produks = \App\Models\Produk::all();
+    $penjuals = \App\Models\Penjual::all();
+    return view('pembelian', compact('pembelis', 'produks', 'penjuals'));
+});
+
+Route::post('/pembelian/store', [PembelianController::class, 'store'])->name('pembelian.store');
+
 Route::resource('kategori', KategoriController::class);
 Route::resource('produk', ProdukController::class);
 Route::resource('penjual', PenjualController::class);
